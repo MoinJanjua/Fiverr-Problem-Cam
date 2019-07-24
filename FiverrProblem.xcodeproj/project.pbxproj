@@ -15,6 +15,48 @@
 		D45AE54322E6D08C0017B31B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45AE54122E6D08C0017B31B /* LaunchScreen.storyboard */; };
 		D45AE54E22E6D08C0017B31B /* FiverrProblemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45AE54D22E6D08C0017B31B /* FiverrProblemTests.swift */; };
 		D45AE55922E6D08C0017B31B /* FiverrProblemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45AE55822E6D08C0017B31B /* FiverrProblemUITests.swift */; };
+		D47BC32A22E6D518009FC7E1 /* SCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2EF22E6D518009FC7E1 /* SCImageView.m */; };
+		D47BC32B22E6D518009FC7E1 /* SCSampleBufferHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F022E6D518009FC7E1 /* SCSampleBufferHolder.m */; };
+		D47BC32C22E6D518009FC7E1 /* SCProcessingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F122E6D518009FC7E1 /* SCProcessingQueue.m */; };
+		D47BC32D22E6D518009FC7E1 /* SCRecorderToolsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F322E6D518009FC7E1 /* SCRecorderToolsView.m */; };
+		D47BC32E22E6D518009FC7E1 /* SCRecorderTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F622E6D518009FC7E1 /* SCRecorderTools.m */; };
+		D47BC32F22E6D518009FC7E1 /* SCFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F822E6D518009FC7E1 /* SCFilter.m */; };
+		D47BC33022E6D518009FC7E1 /* SCRecordSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2F922E6D518009FC7E1 /* SCRecordSession.m */; };
+		D47BC33122E6D518009FC7E1 /* SCFilter+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2FB22E6D518009FC7E1 /* SCFilter+UIImage.m */; };
+		D47BC33222E6D518009FC7E1 /* SCRecorderFocusTargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2FD22E6D518009FC7E1 /* SCRecorderFocusTargetView.m */; };
+		D47BC33322E6D518009FC7E1 /* SCAudioConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC2FE22E6D518009FC7E1 /* SCAudioConfiguration.m */; };
+		D47BC33422E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30022E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.m */; };
+		D47BC33522E6D518009FC7E1 /* SCWeakSelectorTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30222E6D518009FC7E1 /* SCWeakSelectorTarget.m */; };
+		D47BC33622E6D518009FC7E1 /* SCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30422E6D518009FC7E1 /* SCContext.m */; };
+		D47BC33722E6D518009FC7E1 /* SCMediaTypeConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30522E6D518009FC7E1 /* SCMediaTypeConfiguration.m */; };
+		D47BC33822E6D518009FC7E1 /* SCPhotoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30822E6D518009FC7E1 /* SCPhotoConfiguration.m */; };
+		D47BC33922E6D518009FC7E1 /* SCSaveToCameraRollOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30922E6D518009FC7E1 /* SCSaveToCameraRollOperation.m */; };
+		D47BC33A22E6D518009FC7E1 /* SCFilterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30C22E6D518009FC7E1 /* SCFilterImageView.m */; };
+		D47BC33B22E6D518009FC7E1 /* SCAudioTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30D22E6D518009FC7E1 /* SCAudioTools.m */; };
+		D47BC33C22E6D518009FC7E1 /* SCAssetExportSession.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC30E22E6D518009FC7E1 /* SCAssetExportSession.m */; };
+		D47BC33D22E6D518009FC7E1 /* SCVideoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31022E6D518009FC7E1 /* SCVideoConfiguration.m */; };
+		D47BC33E22E6D518009FC7E1 /* SCSwipeableFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31322E6D518009FC7E1 /* SCSwipeableFilterView.m */; };
+		D47BC33F22E6D518009FC7E1 /* SCRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31622E6D518009FC7E1 /* SCRecorder.m */; };
+		D47BC34022E6D518009FC7E1 /* SCPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31722E6D518009FC7E1 /* SCPlayer.m */; };
+		D47BC34122E6D518009FC7E1 /* SCIOPixelBuffers.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31B22E6D518009FC7E1 /* SCIOPixelBuffers.m */; };
+		D47BC34222E6D518009FC7E1 /* SCVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC31F22E6D518009FC7E1 /* SCVideoPlayerView.m */; };
+		D47BC34322E6D518009FC7E1 /* SCFilterAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC32322E6D518009FC7E1 /* SCFilterAnimation.m */; };
+		D47BC34422E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC32522E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.m */; };
+		D47BC34522E6D518009FC7E1 /* SCFilter+VideoComposition.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC32822E6D518009FC7E1 /* SCFilter+VideoComposition.m */; };
+		D47BC34622E6D518009FC7E1 /* SCRecordSessionSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC32922E6D518009FC7E1 /* SCRecordSessionSegment.m */; };
+		D47BC36222E6D654009FC7E1 /* SCImageDisplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC34A22E6D651009FC7E1 /* SCImageDisplayerViewController.m */; };
+		D47BC36322E6D654009FC7E1 /* SCSessionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC34E22E6D651009FC7E1 /* SCSessionListViewController.m */; };
+		D47BC36522E6D654009FC7E1 /* SCTouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35322E6D652009FC7E1 /* SCTouchDetector.m */; };
+		D47BC36622E6D654009FC7E1 /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35422E6D652009FC7E1 /* SCAppDelegate.m */; };
+		D47BC36722E6D654009FC7E1 /* SCAudioRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35722E6D653009FC7E1 /* SCAudioRecordViewController.m */; };
+		D47BC36822E6D654009FC7E1 /* SCRecorderExamples-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D47BC35922E6D653009FC7E1 /* SCRecorderExamples-Info.plist */; };
+		D47BC36922E6D654009FC7E1 /* SCRecordSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35A22E6D653009FC7E1 /* SCRecordSessionManager.m */; };
+		D47BC36A22E6D654009FC7E1 /* SCEditVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35E22E6D653009FC7E1 /* SCEditVideoViewController.m */; };
+		D47BC36B22E6D654009FC7E1 /* SCVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC35F22E6D654009FC7E1 /* SCVideoPlayerViewController.m */; };
+		D47BC36C22E6D654009FC7E1 /* SCWatermarkOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC36022E6D654009FC7E1 /* SCWatermarkOverlayView.m */; };
+		D47BC36D22E6D654009FC7E1 /* SCSessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC36122E6D654009FC7E1 /* SCSessionTableViewCell.m */; };
+		D47BC37022E6D8FC009FC7E1 /* TouchDownGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC36E22E6D8FC009FC7E1 /* TouchDownGestureRecognizer.m */; };
+		D47BC37222E6D9B5009FC7E1 /* SCRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47BC37122E6D9B5009FC7E1 /* SCRecorderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +91,95 @@
 		D45AE55422E6D08C0017B31B /* FiverrProblemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FiverrProblemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45AE55822E6D08C0017B31B /* FiverrProblemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiverrProblemUITests.swift; sourceTree = "<group>"; };
 		D45AE55A22E6D08D0017B31B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D47BC28322E6D30C009FC7E1 /* FiverrProblem-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FiverrProblem-Bridging-Header.h"; sourceTree = "<group>"; };
+		D47BC2EC22E6D518009FC7E1 /* SCAudioTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioTools.h; sourceTree = "<group>"; };
+		D47BC2ED22E6D518009FC7E1 /* SCFilterImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterImageView.h; sourceTree = "<group>"; };
+		D47BC2EE22E6D518009FC7E1 /* SCAudioVideoRecorder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCAudioVideoRecorder-Prefix.pch"; sourceTree = "<group>"; };
+		D47BC2EF22E6D518009FC7E1 /* SCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageView.m; sourceTree = "<group>"; };
+		D47BC2F022E6D518009FC7E1 /* SCSampleBufferHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSampleBufferHolder.m; sourceTree = "<group>"; };
+		D47BC2F122E6D518009FC7E1 /* SCProcessingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCProcessingQueue.m; sourceTree = "<group>"; };
+		D47BC2F222E6D518009FC7E1 /* SCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPlayer.h; sourceTree = "<group>"; };
+		D47BC2F322E6D518009FC7E1 /* SCRecorderToolsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorderToolsView.m; sourceTree = "<group>"; };
+		D47BC2F422E6D518009FC7E1 /* SCRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorder.h; sourceTree = "<group>"; };
+		D47BC2F522E6D518009FC7E1 /* SCSwipeableFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSwipeableFilterView.h; sourceTree = "<group>"; };
+		D47BC2F622E6D518009FC7E1 /* SCRecorderTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorderTools.m; sourceTree = "<group>"; };
+		D47BC2F722E6D518009FC7E1 /* SCVideoConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVideoConfiguration.h; sourceTree = "<group>"; };
+		D47BC2F822E6D518009FC7E1 /* SCFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilter.m; sourceTree = "<group>"; };
+		D47BC2F922E6D518009FC7E1 /* SCRecordSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSession.m; sourceTree = "<group>"; };
+		D47BC2FA22E6D518009FC7E1 /* SCAssetExportSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAssetExportSession.h; sourceTree = "<group>"; };
+		D47BC2FB22E6D518009FC7E1 /* SCFilter+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCFilter+UIImage.m"; sourceTree = "<group>"; };
+		D47BC2FC22E6D518009FC7E1 /* SCVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVideoPlayerView.h; sourceTree = "<group>"; };
+		D47BC2FD22E6D518009FC7E1 /* SCRecorderFocusTargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorderFocusTargetView.m; sourceTree = "<group>"; };
+		D47BC2FE22E6D518009FC7E1 /* SCAudioConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioConfiguration.m; sourceTree = "<group>"; };
+		D47BC2FF22E6D518009FC7E1 /* SCIOPixelBuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCIOPixelBuffers.h; sourceTree = "<group>"; };
+		D47BC30022E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SCSaveToCameraRoll.m"; sourceTree = "<group>"; };
+		D47BC30122E6D518009FC7E1 /* SCFilter+VideoComposition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCFilter+VideoComposition.h"; sourceTree = "<group>"; };
+		D47BC30222E6D518009FC7E1 /* SCWeakSelectorTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWeakSelectorTarget.m; sourceTree = "<group>"; };
+		D47BC30322E6D518009FC7E1 /* SCRecordSessionSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionSegment.h; sourceTree = "<group>"; };
+		D47BC30422E6D518009FC7E1 /* SCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCContext.m; sourceTree = "<group>"; };
+		D47BC30522E6D518009FC7E1 /* SCMediaTypeConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMediaTypeConfiguration.m; sourceTree = "<group>"; };
+		D47BC30622E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SCSaveToCameraRoll.h"; sourceTree = "<group>"; };
+		D47BC30722E6D518009FC7E1 /* SCFilterAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilterAnimation.h; sourceTree = "<group>"; };
+		D47BC30822E6D518009FC7E1 /* SCPhotoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPhotoConfiguration.m; sourceTree = "<group>"; };
+		D47BC30922E6D518009FC7E1 /* SCSaveToCameraRollOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSaveToCameraRollOperation.m; sourceTree = "<group>"; };
+		D47BC30A22E6D518009FC7E1 /* SCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageView.h; sourceTree = "<group>"; };
+		D47BC30B22E6D518009FC7E1 /* SCSampleBufferHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSampleBufferHolder.h; sourceTree = "<group>"; };
+		D47BC30C22E6D518009FC7E1 /* SCFilterImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterImageView.m; sourceTree = "<group>"; };
+		D47BC30D22E6D518009FC7E1 /* SCAudioTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioTools.m; sourceTree = "<group>"; };
+		D47BC30E22E6D518009FC7E1 /* SCAssetExportSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAssetExportSession.m; sourceTree = "<group>"; };
+		D47BC30F22E6D518009FC7E1 /* SCRecordSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSession.h; sourceTree = "<group>"; };
+		D47BC31022E6D518009FC7E1 /* SCVideoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVideoConfiguration.m; sourceTree = "<group>"; };
+		D47BC31122E6D518009FC7E1 /* SCFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFilter.h; sourceTree = "<group>"; };
+		D47BC31222E6D518009FC7E1 /* SCRecorderTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderTools.h; sourceTree = "<group>"; };
+		D47BC31322E6D518009FC7E1 /* SCSwipeableFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSwipeableFilterView.m; sourceTree = "<group>"; };
+		D47BC31422E6D518009FC7E1 /* SCRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderDelegate.h; sourceTree = "<group>"; };
+		D47BC31522E6D518009FC7E1 /* SCRecordSession_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSession_Internal.h; sourceTree = "<group>"; };
+		D47BC31622E6D518009FC7E1 /* SCRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorder.m; sourceTree = "<group>"; };
+		D47BC31722E6D518009FC7E1 /* SCPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPlayer.m; sourceTree = "<group>"; };
+		D47BC31822E6D518009FC7E1 /* SCRecorderToolsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderToolsView.h; sourceTree = "<group>"; };
+		D47BC31922E6D518009FC7E1 /* SCProcessingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCProcessingQueue.h; sourceTree = "<group>"; };
+		D47BC31A22E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SCSaveToCameraRoll.h"; sourceTree = "<group>"; };
+		D47BC31B22E6D518009FC7E1 /* SCIOPixelBuffers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCIOPixelBuffers.m; sourceTree = "<group>"; };
+		D47BC31C22E6D518009FC7E1 /* SCAudioConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioConfiguration.h; sourceTree = "<group>"; };
+		D47BC31D22E6D518009FC7E1 /* SCRecorderHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderHeader.h; sourceTree = "<group>"; };
+		D47BC31E22E6D518009FC7E1 /* SCRecorderFocusTargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderFocusTargetView.h; sourceTree = "<group>"; };
+		D47BC31F22E6D518009FC7E1 /* SCVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVideoPlayerView.m; sourceTree = "<group>"; };
+		D47BC32022E6D518009FC7E1 /* SCFilter+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCFilter+UIImage.h"; sourceTree = "<group>"; };
+		D47BC32122E6D518009FC7E1 /* SCSaveToCameraRollOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSaveToCameraRollOperation.h; sourceTree = "<group>"; };
+		D47BC32222E6D518009FC7E1 /* SCPhotoConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPhotoConfiguration.h; sourceTree = "<group>"; };
+		D47BC32322E6D518009FC7E1 /* SCFilterAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFilterAnimation.m; sourceTree = "<group>"; };
+		D47BC32422E6D518009FC7E1 /* SCMediaTypeConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMediaTypeConfiguration.h; sourceTree = "<group>"; };
+		D47BC32522E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SCSaveToCameraRoll.m"; sourceTree = "<group>"; };
+		D47BC32622E6D518009FC7E1 /* SCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCContext.h; sourceTree = "<group>"; };
+		D47BC32722E6D518009FC7E1 /* SCWeakSelectorTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWeakSelectorTarget.h; sourceTree = "<group>"; };
+		D47BC32822E6D518009FC7E1 /* SCFilter+VideoComposition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SCFilter+VideoComposition.m"; sourceTree = "<group>"; };
+		D47BC32922E6D518009FC7E1 /* SCRecordSessionSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionSegment.m; sourceTree = "<group>"; };
+		D47BC34722E6D5EA009FC7E1 /* SCRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecorderViewController.h; sourceTree = "<group>"; };
+		D47BC34A22E6D651009FC7E1 /* SCImageDisplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCImageDisplayerViewController.m; sourceTree = "<group>"; };
+		D47BC34B22E6D651009FC7E1 /* SCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
+		D47BC34C22E6D651009FC7E1 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
+		D47BC34D22E6D651009FC7E1 /* SCSessionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionListViewController.h; sourceTree = "<group>"; };
+		D47BC34E22E6D651009FC7E1 /* SCSessionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionListViewController.m; sourceTree = "<group>"; };
+		D47BC34F22E6D652009FC7E1 /* SCAudioRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAudioRecordViewController.h; sourceTree = "<group>"; };
+		D47BC35022E6D652009FC7E1 /* SCRecorderExamples-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SCRecorderExamples-Prefix.pch"; sourceTree = "<group>"; };
+		D47BC35222E6D652009FC7E1 /* SCImageDisplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCImageDisplayerViewController.h; sourceTree = "<group>"; };
+		D47BC35322E6D652009FC7E1 /* SCTouchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTouchDetector.m; sourceTree = "<group>"; };
+		D47BC35422E6D652009FC7E1 /* SCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
+		D47BC35522E6D652009FC7E1 /* SCWatermarkOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWatermarkOverlayView.h; sourceTree = "<group>"; };
+		D47BC35622E6D652009FC7E1 /* SCSessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSessionTableViewCell.h; sourceTree = "<group>"; };
+		D47BC35722E6D653009FC7E1 /* SCAudioRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAudioRecordViewController.m; sourceTree = "<group>"; };
+		D47BC35822E6D653009FC7E1 /* SCEditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditVideoViewController.h; sourceTree = "<group>"; };
+		D47BC35922E6D653009FC7E1 /* SCRecorderExamples-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SCRecorderExamples-Info.plist"; sourceTree = "<group>"; };
+		D47BC35A22E6D653009FC7E1 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
+		D47BC35C22E6D653009FC7E1 /* SCTouchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTouchDetector.h; sourceTree = "<group>"; };
+		D47BC35D22E6D653009FC7E1 /* SCVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCVideoPlayerViewController.h; sourceTree = "<group>"; };
+		D47BC35E22E6D653009FC7E1 /* SCEditVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditVideoViewController.m; sourceTree = "<group>"; };
+		D47BC35F22E6D654009FC7E1 /* SCVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCVideoPlayerViewController.m; sourceTree = "<group>"; };
+		D47BC36022E6D654009FC7E1 /* SCWatermarkOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWatermarkOverlayView.m; sourceTree = "<group>"; };
+		D47BC36122E6D654009FC7E1 /* SCSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionTableViewCell.m; sourceTree = "<group>"; };
+		D47BC36E22E6D8FC009FC7E1 /* TouchDownGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDownGestureRecognizer.m; sourceTree = "<group>"; };
+		D47BC36F22E6D8FC009FC7E1 /* TouchDownGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDownGestureRecognizer.h; sourceTree = "<group>"; };
+		D47BC37122E6D9B5009FC7E1 /* SCRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCRecorderViewController.m; path = "../../../../../Downloads/SCRecorder-master-2/Examples/ObjC/Sources/SCRecorderViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +235,10 @@
 				D45AE53922E6D08A0017B31B /* Main.storyboard */,
 				D45AE53F22E6D08C0017B31B /* Assets.xcassets */,
 				D45AE54122E6D08C0017B31B /* LaunchScreen.storyboard */,
+				D47BC2EB22E6D518009FC7E1 /* Sources */,
 				D45AE54422E6D08C0017B31B /* Info.plist */,
 				D45AE53C22E6D08A0017B31B /* FiverrProblem.xcdatamodeld */,
+				D47BC28322E6D30C009FC7E1 /* FiverrProblem-Bridging-Header.h */,
 			);
 			path = FiverrProblem;
 			sourceTree = "<group>";
@@ -126,6 +259,101 @@
 				D45AE55A22E6D08D0017B31B /* Info.plist */,
 			);
 			path = FiverrProblemUITests;
+			sourceTree = "<group>";
+		};
+		D47BC2EB22E6D518009FC7E1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D47BC34722E6D5EA009FC7E1 /* SCRecorderViewController.h */,
+				D47BC34B22E6D651009FC7E1 /* SCAppDelegate.h */,
+				D47BC35422E6D652009FC7E1 /* SCAppDelegate.m */,
+				D47BC36F22E6D8FC009FC7E1 /* TouchDownGestureRecognizer.h */,
+				D47BC36E22E6D8FC009FC7E1 /* TouchDownGestureRecognizer.m */,
+				D47BC34F22E6D652009FC7E1 /* SCAudioRecordViewController.h */,
+				D47BC35722E6D653009FC7E1 /* SCAudioRecordViewController.m */,
+				D47BC35822E6D653009FC7E1 /* SCEditVideoViewController.h */,
+				D47BC35E22E6D653009FC7E1 /* SCEditVideoViewController.m */,
+				D47BC35222E6D652009FC7E1 /* SCImageDisplayerViewController.h */,
+				D47BC34A22E6D651009FC7E1 /* SCImageDisplayerViewController.m */,
+				D47BC35922E6D653009FC7E1 /* SCRecorderExamples-Info.plist */,
+				D47BC35022E6D652009FC7E1 /* SCRecorderExamples-Prefix.pch */,
+				D47BC37122E6D9B5009FC7E1 /* SCRecorderViewController.m */,
+				D47BC34C22E6D651009FC7E1 /* SCRecordSessionManager.h */,
+				D47BC35A22E6D653009FC7E1 /* SCRecordSessionManager.m */,
+				D47BC34D22E6D651009FC7E1 /* SCSessionListViewController.h */,
+				D47BC34E22E6D651009FC7E1 /* SCSessionListViewController.m */,
+				D47BC35622E6D652009FC7E1 /* SCSessionTableViewCell.h */,
+				D47BC36122E6D654009FC7E1 /* SCSessionTableViewCell.m */,
+				D47BC35C22E6D653009FC7E1 /* SCTouchDetector.h */,
+				D47BC35322E6D652009FC7E1 /* SCTouchDetector.m */,
+				D47BC35D22E6D653009FC7E1 /* SCVideoPlayerViewController.h */,
+				D47BC35F22E6D654009FC7E1 /* SCVideoPlayerViewController.m */,
+				D47BC35522E6D652009FC7E1 /* SCWatermarkOverlayView.h */,
+				D47BC36022E6D654009FC7E1 /* SCWatermarkOverlayView.m */,
+				D47BC2EC22E6D518009FC7E1 /* SCAudioTools.h */,
+				D47BC2ED22E6D518009FC7E1 /* SCFilterImageView.h */,
+				D47BC2EE22E6D518009FC7E1 /* SCAudioVideoRecorder-Prefix.pch */,
+				D47BC2EF22E6D518009FC7E1 /* SCImageView.m */,
+				D47BC2F022E6D518009FC7E1 /* SCSampleBufferHolder.m */,
+				D47BC2F122E6D518009FC7E1 /* SCProcessingQueue.m */,
+				D47BC2F222E6D518009FC7E1 /* SCPlayer.h */,
+				D47BC2F322E6D518009FC7E1 /* SCRecorderToolsView.m */,
+				D47BC2F422E6D518009FC7E1 /* SCRecorder.h */,
+				D47BC2F522E6D518009FC7E1 /* SCSwipeableFilterView.h */,
+				D47BC2F622E6D518009FC7E1 /* SCRecorderTools.m */,
+				D47BC2F722E6D518009FC7E1 /* SCVideoConfiguration.h */,
+				D47BC2F822E6D518009FC7E1 /* SCFilter.m */,
+				D47BC2F922E6D518009FC7E1 /* SCRecordSession.m */,
+				D47BC2FA22E6D518009FC7E1 /* SCAssetExportSession.h */,
+				D47BC2FB22E6D518009FC7E1 /* SCFilter+UIImage.m */,
+				D47BC2FC22E6D518009FC7E1 /* SCVideoPlayerView.h */,
+				D47BC2FD22E6D518009FC7E1 /* SCRecorderFocusTargetView.m */,
+				D47BC2FE22E6D518009FC7E1 /* SCAudioConfiguration.m */,
+				D47BC2FF22E6D518009FC7E1 /* SCIOPixelBuffers.h */,
+				D47BC30022E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.m */,
+				D47BC30122E6D518009FC7E1 /* SCFilter+VideoComposition.h */,
+				D47BC30222E6D518009FC7E1 /* SCWeakSelectorTarget.m */,
+				D47BC30322E6D518009FC7E1 /* SCRecordSessionSegment.h */,
+				D47BC30422E6D518009FC7E1 /* SCContext.m */,
+				D47BC30522E6D518009FC7E1 /* SCMediaTypeConfiguration.m */,
+				D47BC30622E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.h */,
+				D47BC30722E6D518009FC7E1 /* SCFilterAnimation.h */,
+				D47BC30822E6D518009FC7E1 /* SCPhotoConfiguration.m */,
+				D47BC30922E6D518009FC7E1 /* SCSaveToCameraRollOperation.m */,
+				D47BC30A22E6D518009FC7E1 /* SCImageView.h */,
+				D47BC30B22E6D518009FC7E1 /* SCSampleBufferHolder.h */,
+				D47BC30C22E6D518009FC7E1 /* SCFilterImageView.m */,
+				D47BC30D22E6D518009FC7E1 /* SCAudioTools.m */,
+				D47BC30E22E6D518009FC7E1 /* SCAssetExportSession.m */,
+				D47BC30F22E6D518009FC7E1 /* SCRecordSession.h */,
+				D47BC31022E6D518009FC7E1 /* SCVideoConfiguration.m */,
+				D47BC31122E6D518009FC7E1 /* SCFilter.h */,
+				D47BC31222E6D518009FC7E1 /* SCRecorderTools.h */,
+				D47BC31322E6D518009FC7E1 /* SCSwipeableFilterView.m */,
+				D47BC31422E6D518009FC7E1 /* SCRecorderDelegate.h */,
+				D47BC31522E6D518009FC7E1 /* SCRecordSession_Internal.h */,
+				D47BC31622E6D518009FC7E1 /* SCRecorder.m */,
+				D47BC31722E6D518009FC7E1 /* SCPlayer.m */,
+				D47BC31822E6D518009FC7E1 /* SCRecorderToolsView.h */,
+				D47BC31922E6D518009FC7E1 /* SCProcessingQueue.h */,
+				D47BC31A22E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.h */,
+				D47BC31B22E6D518009FC7E1 /* SCIOPixelBuffers.m */,
+				D47BC31C22E6D518009FC7E1 /* SCAudioConfiguration.h */,
+				D47BC31D22E6D518009FC7E1 /* SCRecorderHeader.h */,
+				D47BC31E22E6D518009FC7E1 /* SCRecorderFocusTargetView.h */,
+				D47BC31F22E6D518009FC7E1 /* SCVideoPlayerView.m */,
+				D47BC32022E6D518009FC7E1 /* SCFilter+UIImage.h */,
+				D47BC32122E6D518009FC7E1 /* SCSaveToCameraRollOperation.h */,
+				D47BC32222E6D518009FC7E1 /* SCPhotoConfiguration.h */,
+				D47BC32322E6D518009FC7E1 /* SCFilterAnimation.m */,
+				D47BC32422E6D518009FC7E1 /* SCMediaTypeConfiguration.h */,
+				D47BC32522E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.m */,
+				D47BC32622E6D518009FC7E1 /* SCContext.h */,
+				D47BC32722E6D518009FC7E1 /* SCWeakSelectorTarget.h */,
+				D47BC32822E6D518009FC7E1 /* SCFilter+VideoComposition.m */,
+				D47BC32922E6D518009FC7E1 /* SCRecordSessionSegment.m */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +424,7 @@
 				TargetAttributes = {
 					D45AE53122E6D08A0017B31B = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					D45AE54822E6D08C0017B31B = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -235,6 +464,7 @@
 				D45AE54322E6D08C0017B31B /* LaunchScreen.storyboard in Resources */,
 				D45AE54022E6D08C0017B31B /* Assets.xcassets in Resources */,
 				D45AE53B22E6D08A0017B31B /* Main.storyboard in Resources */,
+				D47BC36822E6D654009FC7E1 /* SCRecorderExamples-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +489,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47BC32C22E6D518009FC7E1 /* SCProcessingQueue.m in Sources */,
+				D47BC33622E6D518009FC7E1 /* SCContext.m in Sources */,
+				D47BC32E22E6D518009FC7E1 /* SCRecorderTools.m in Sources */,
+				D47BC32F22E6D518009FC7E1 /* SCFilter.m in Sources */,
+				D47BC32A22E6D518009FC7E1 /* SCImageView.m in Sources */,
+				D47BC34522E6D518009FC7E1 /* SCFilter+VideoComposition.m in Sources */,
+				D47BC33722E6D518009FC7E1 /* SCMediaTypeConfiguration.m in Sources */,
+				D47BC36922E6D654009FC7E1 /* SCRecordSessionManager.m in Sources */,
+				D47BC36C22E6D654009FC7E1 /* SCWatermarkOverlayView.m in Sources */,
+				D47BC36A22E6D654009FC7E1 /* SCEditVideoViewController.m in Sources */,
+				D47BC33522E6D518009FC7E1 /* SCWeakSelectorTarget.m in Sources */,
+				D47BC36322E6D654009FC7E1 /* SCSessionListViewController.m in Sources */,
+				D47BC33C22E6D518009FC7E1 /* SCAssetExportSession.m in Sources */,
+				D47BC34322E6D518009FC7E1 /* SCFilterAnimation.m in Sources */,
+				D47BC33822E6D518009FC7E1 /* SCPhotoConfiguration.m in Sources */,
+				D47BC33A22E6D518009FC7E1 /* SCFilterImageView.m in Sources */,
+				D47BC33F22E6D518009FC7E1 /* SCRecorder.m in Sources */,
+				D47BC34222E6D518009FC7E1 /* SCVideoPlayerView.m in Sources */,
+				D47BC34422E6D518009FC7E1 /* UIImage+SCSaveToCameraRoll.m in Sources */,
+				D47BC36622E6D654009FC7E1 /* SCAppDelegate.m in Sources */,
+				D47BC37222E6D9B5009FC7E1 /* SCRecorderViewController.m in Sources */,
+				D47BC32D22E6D518009FC7E1 /* SCRecorderToolsView.m in Sources */,
 				D45AE53822E6D08A0017B31B /* ViewController.swift in Sources */,
+				D47BC36722E6D654009FC7E1 /* SCAudioRecordViewController.m in Sources */,
+				D47BC33B22E6D518009FC7E1 /* SCAudioTools.m in Sources */,
+				D47BC32B22E6D518009FC7E1 /* SCSampleBufferHolder.m in Sources */,
 				D45AE53E22E6D08A0017B31B /* FiverrProblem.xcdatamodeld in Sources */,
+				D47BC37022E6D8FC009FC7E1 /* TouchDownGestureRecognizer.m in Sources */,
+				D47BC33322E6D518009FC7E1 /* SCAudioConfiguration.m in Sources */,
+				D47BC34122E6D518009FC7E1 /* SCIOPixelBuffers.m in Sources */,
+				D47BC33922E6D518009FC7E1 /* SCSaveToCameraRollOperation.m in Sources */,
+				D47BC33222E6D518009FC7E1 /* SCRecorderFocusTargetView.m in Sources */,
+				D47BC33422E6D518009FC7E1 /* NSURL+SCSaveToCameraRoll.m in Sources */,
+				D47BC36522E6D654009FC7E1 /* SCTouchDetector.m in Sources */,
+				D47BC33D22E6D518009FC7E1 /* SCVideoConfiguration.m in Sources */,
 				D45AE53622E6D08A0017B31B /* AppDelegate.swift in Sources */,
+				D47BC34022E6D518009FC7E1 /* SCPlayer.m in Sources */,
+				D47BC33E22E6D518009FC7E1 /* SCSwipeableFilterView.m in Sources */,
+				D47BC36222E6D654009FC7E1 /* SCImageDisplayerViewController.m in Sources */,
+				D47BC36B22E6D654009FC7E1 /* SCVideoPlayerViewController.m in Sources */,
+				D47BC36D22E6D654009FC7E1 /* SCSessionTableViewCell.m in Sources */,
+				D47BC33122E6D518009FC7E1 /* SCFilter+UIImage.m in Sources */,
+				D47BC33022E6D518009FC7E1 /* SCRecordSession.m in Sources */,
+				D47BC34622E6D518009FC7E1 /* SCRecordSessionSegment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BF7JH9S985;
 				INFOPLIST_FILE = FiverrProblem/Info.plist;
@@ -445,6 +717,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiverrProblem/FiverrProblem-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BF7JH9S985;
 				INFOPLIST_FILE = FiverrProblem/Info.plist;
@@ -463,6 +738,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FiverrProblem/FiverrProblem-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
