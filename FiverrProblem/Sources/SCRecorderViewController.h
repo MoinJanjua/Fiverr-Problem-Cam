@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SCRecorder.h"
 
-@interface SCRecorderViewController : UIViewController<SCRecorderDelegate, UIImagePickerControllerDelegate>
+@interface SCRecorderViewController : UIViewController<SCRecorderDelegate, UIImagePickerControllerDelegate,UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *ok;
 @property (strong, nonatomic) SCRecordSession *recordSession;
 

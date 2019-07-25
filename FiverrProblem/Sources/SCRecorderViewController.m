@@ -54,6 +54,10 @@
     _recorder.previewView = nil;
 }
 
+
+UIPanGestureRecognizer * panGesture;
+SCTouchDetector *tapGesture;
+UITapGestureRecognizer *doubleTapGesture;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -86,7 +90,7 @@
     [self.stopButton addTarget:self action:@selector(handleStopButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.reverseCamera addTarget:self action:@selector(handleReverseCameraTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.recordView addGestureRecognizer:[[SCTouchDetector alloc] initWithTarget:self action:@selector(handleTouchDetected:)]];
+    
     
     
     self.loadingView.hidden = YES;
@@ -95,16 +99,25 @@
     self.focusView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     
-    UITapGestureRecognizer *singleFingerTap =
+    doubleTapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(handleSingleTap:)];
-    [self.focusView addGestureRecognizer:singleFingerTap];
-    singleFingerTap.numberOfTapsRequired = 2;
+                                            action:@selector(handleDoubleTap:)];
+    [self.view addGestureRecognizer:doubleTapGesture];
+    doubleTapGesture.numberOfTapsRequired = 2;
     
     self.focusView.recorder = _recorder;
     [_light addSubview:self.focusView];
-    [self.focusView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)]];
+    panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
+    [self.view addGestureRecognizer:panGesture];
+    panGesture.delegate = self;
     
+    tapGesture = [[SCTouchDetector alloc] initWithTarget:self action:@selector(handleTouchDetected:)];
+    [self.view addGestureRecognizer: tapGesture];
+    tapGesture.delegate = self;
+//    UITapGestureRecognizer *recordTap =
+//    [[UITapGestureRecognizer alloc] initWithTarget:self
+//                                            action:@selector(handleSingleTap:)];
+//    [self.view addGestureRecognizer:recordTap];
     
     self.focusView.outsideFocusTargetImage = [UIImage imageNamed:@"Circles"];
     
@@ -133,7 +146,7 @@
     _maxZoomFactor = 25;
     _minZoomFactor = 1;
     
-    NSLog(@"hemi1");
+    
     
     if (sender.state == UIGestureRecognizerStateBegan) {
         _startPoint = [sender locationInView:self.flass];
@@ -151,10 +164,11 @@
         } else if ( _newZoom < _minZoomFactor ) {
             _newZoom = _minZoomFactor;
         }
-        NSLog(@"hemi");
+        //NSLog(@"hemi");
         _recorder.videoZoomFactor = _newZoom;
         
     } else {
+        //NSLog(@"hemi move");
         _newPoint = [sender locationInView:self.previewView];
         
         _scale = _startPoint.y / _newPoint.y;
@@ -229,7 +243,7 @@
     
 }
 
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+- (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer {
     
     // abool = camera flash indicated on
     
@@ -237,8 +251,11 @@
     // abool1 = camera is facing back
     
     // cameraOn = if camera is currently recording
-    
-    
+    CGPoint touchPoint = [recognizer locationInView:self.recordView];
+    BOOL recordTapped = CGRectContainsPoint(self.recordView.frame, touchPoint);
+    if (recordTapped){
+        return; //Double tap should not be occured on record button
+    }
     
     
     if (_abool == true){
@@ -602,94 +619,118 @@
 - (void)recorder:(SCRecorder *)recorder didAppendVideoSampleBufferInSession:(SCRecordSession *)recordSession {
     [self updateTimeRecordedLabel];
 }
-
-- (void)handleTouchDetected:(SCTouchDetector*)touchDetector {
+- (void)startRecording{
+    _rbut.alpha = 0;
+    _lbut.alpha = 0;
+    _rbut2.alpha = 0;
+    _lbut2.alpha = 0;
     
-    if (touchDetector.state == UIGestureRecognizerStateBegan) {
-        _rbut.alpha = 0;
-        _lbut.alpha = 0;
-        _rbut2.alpha = 0;
-        _lbut2.alpha = 0;
-        
-        
-        
+    
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         _l1.alpha = 0;
+                         _r1.alpha = 0;
+                         _r2.alpha = 0;
+                         _l2.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
+    [_recorder record];
+    
+    _cameraOn = true;
+    printf("falllss");
+    
+    [self DoIt];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         _yeppa.transform = CGAffineTransformMakeScale(1.4, 1.4);
+                         _redder.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    _ghostImageView.hidden = YES;
+    
+    
+}
+- (void)pauseRecording{
+    [_recorder pause];
+    _cameraOn = false;
+    _light.alpha = 1;
+    _light.backgroundColor = UIColor.clearColor;
+    _recorder.flashMode = SCFlashModeOff;
+    printf("falll");
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         _yeppa.transform = CGAffineTransformMakeScale(1, 1);
+                         _redder.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    if (_recorder.session.segments.count >= 0) {
         [UIView animateWithDuration:0.3
                          animations:^{
+                             _rbut.alpha = 0;
+                             _lbut.alpha = 0;
+                             _rbut2.alpha = 1;
+                             _lbut2.alpha = 1;
                              _l1.alpha = 0;
-                             _r1.alpha = 0;
+                             _r1.alpha = 1;
                              _r2.alpha = 0;
+                             _l2.alpha = 1;
+                         }
+                         completion:^(BOOL finished) {
+                             
+                         }];
+    } else {
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             _rbut.alpha = 1;
+                             _lbut.alpha = 1;
+                             _rbut2.alpha = 0;
+                             _lbut2.alpha = 0;
+                             _l1.alpha = 1;
+                             _r1.alpha = 0;
+                             _r2.alpha = 1;
                              _l2.alpha = 0;
                          }
                          completion:^(BOOL finished) {
                              
                          }];
-        
-        [_recorder record];
-        
-        _cameraOn = true;
-        printf("falllss");
-        
-        [self DoIt];
-        [UIView animateWithDuration:0.3
-                         animations:^{
-                             _yeppa.transform = CGAffineTransformMakeScale(1.4, 1.4);
-                             _redder.alpha = 0;
-                         }
-                         completion:^(BOOL finished) {
-                             
-                         }];
-        _ghostImageView.hidden = YES;
-        
-        
+    }
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    if (gestureRecognizer == tapGesture && otherGestureRecognizer == panGesture){
+        return true;
+    }else if (gestureRecognizer == tapGesture && otherGestureRecognizer == doubleTapGesture){
+        return true;
+    }
+    return false;
+}
+
+
+- (void)handleTouchDetected:(SCTouchDetector*)touchDetector {
+    
+    if (touchDetector.state == UIGestureRecognizerStateBegan) {
+        CGPoint touchPoint = [touchDetector locationInView:self.recordView];
+        BOOL recordTapped = CGRectContainsPoint(self.recordView.frame, touchPoint);
+        if (self.cameraOn == false && recordTapped){
+            NSLog(@"hemi single start");
+            [self startRecording];
+        }
         
     } else if (touchDetector.state == UIGestureRecognizerStateEnded) {
         
-        
-        [_recorder pause];
-        _cameraOn = false;
-        _light.alpha = 1;
-        _light.backgroundColor = UIColor.clearColor;
-        _recorder.flashMode = SCFlashModeOff;
-        printf("falll");
-        
-        [UIView animateWithDuration:0.3
-                         animations:^{
-                             _yeppa.transform = CGAffineTransformMakeScale(1, 1);
-                             _redder.alpha = 1;
-                         }
-                         completion:^(BOOL finished) {
-                         }];
-        if (_recorder.session.segments.count >= 0) {
-            [UIView animateWithDuration:0.3
-                             animations:^{
-                                 _rbut.alpha = 0;
-                                 _lbut.alpha = 0;
-                                 _rbut2.alpha = 1;
-                                 _lbut2.alpha = 1;
-                                 _l1.alpha = 0;
-                                 _r1.alpha = 1;
-                                 _r2.alpha = 0;
-                                 _l2.alpha = 1;
-                             }
-                             completion:^(BOOL finished) {
-                                 
-                             }];
-        } else {
-            [UIView animateWithDuration:0.3
-                             animations:^{
-                                 _rbut.alpha = 1;
-                                 _lbut.alpha = 1;
-                                 _rbut2.alpha = 0;
-                                 _lbut2.alpha = 0;
-                                 _l1.alpha = 1;
-                                 _r1.alpha = 0;
-                                 _r2.alpha = 1;
-                                 _l2.alpha = 0;
-                             }
-                             completion:^(BOOL finished) {
-                                 
-                             }];
+        if (self.cameraOn){
+            NSLog(@"hemi single stop");
+            [self pauseRecording];
         }
+        
+       
         
     }
     

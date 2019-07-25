@@ -12,6 +12,7 @@
 @implementation SCTouchDetector
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     if (self.enabled) {
         self.state = UIGestureRecognizerStateBegan;
     }
