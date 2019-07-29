@@ -51,6 +51,9 @@
     [self reloadScrollView];
     [self showVideo:0];
 }
+- (IBAction)ok:(UIButton *)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
