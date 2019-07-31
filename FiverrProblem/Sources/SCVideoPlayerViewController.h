@@ -21,4 +21,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *a2;
 @property (weak, nonatomic) IBOutlet UIImageView *adio;
 
+
+
+
+
 @end
+
+
+
+

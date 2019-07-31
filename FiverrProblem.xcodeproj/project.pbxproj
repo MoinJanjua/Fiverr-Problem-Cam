@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AF790922EF3C1B008AA6B4 /* EditVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */; };
+		18AF790B22F021BE008AA6B4 /* VideoUltilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF790A22F021BE008AA6B4 /* VideoUltilities.swift */; };
 		80B1B9EF22E8A66B00D0CB09 /* SCRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B9EE22E8A66B00D0CB09 /* SCRecorderViewController.m */; };
 		934750856490BCC68D3CBF7F /* Pods_FiverrProblem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C2801802A97510A6753969 /* Pods_FiverrProblem.framework */; };
 		D45AE53622E6D08A0017B31B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45AE53522E6D08A0017B31B /* AppDelegate.swift */; };
@@ -125,6 +127,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideosViewController.swift; sourceTree = "<group>"; };
+		18AF790A22F021BE008AA6B4 /* VideoUltilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoUltilities.swift; sourceTree = "<group>"; };
+		18AF790C22F0457D008AA6B4 /* EditVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditVideoViewController.h; sourceTree = "<group>"; };
 		3C45FD414853F4BEB5D10511 /* Pods-FiverrProblem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiverrProblem.release.xcconfig"; path = "Target Support Files/Pods-FiverrProblem/Pods-FiverrProblem.release.xcconfig"; sourceTree = "<group>"; };
 		3FD201F28B57CD8A6ADB3009 /* Pods-FiverrProblem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiverrProblem.debug.xcconfig"; path = "Target Support Files/Pods-FiverrProblem/Pods-FiverrProblem.debug.xcconfig"; sourceTree = "<group>"; };
 		80B1B9EE22E8A66B00D0CB09 /* SCRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorderViewController.m; sourceTree = "<group>"; };
@@ -353,8 +358,11 @@
 			isa = PBXGroup;
 			children = (
 				D45AE53522E6D08A0017B31B /* AppDelegate.swift */,
+				18AF790A22F021BE008AA6B4 /* VideoUltilities.swift */,
 				D45AE53722E6D08A0017B31B /* ViewController.swift */,
 				D45AE53922E6D08A0017B31B /* Main.storyboard */,
+				18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */,
+				18AF790C22F0457D008AA6B4 /* EditVideoViewController.h */,
 				D45AE53F22E6D08C0017B31B /* Assets.xcassets */,
 				D45AE54122E6D08C0017B31B /* LaunchScreen.storyboard */,
 				D47BC2EB22E6D518009FC7E1 /* Sources */,
@@ -764,6 +772,7 @@
 				D47BC32C22E6D518009FC7E1 /* SCProcessingQueue.m in Sources */,
 				D493658122EA9EF700DAC01C /* HeroViewPropertyViewContext.swift in Sources */,
 				D493658922EA9EF700DAC01C /* CALayer+Hero.swift in Sources */,
+				18AF790922EF3C1B008AA6B4 /* EditVideosViewController.swift in Sources */,
 				D493658222EA9EF700DAC01C /* HeroDefaultAnimator.swift in Sources */,
 				D47BC33622E6D518009FC7E1 /* SCContext.m in Sources */,
 				D493658322EA9EF700DAC01C /* HeroAnimatorViewContext.swift in Sources */,
@@ -784,6 +793,7 @@
 				D493658F22EA9EF700DAC01C /* UIViewController+Hero.swift in Sources */,
 				D47BC36A22E6D654009FC7E1 /* SCEditVideoViewController.m in Sources */,
 				D47BC33522E6D518009FC7E1 /* SCWeakSelectorTarget.m in Sources */,
+				18AF790B22F021BE008AA6B4 /* VideoUltilities.swift in Sources */,
 				D47BC36322E6D654009FC7E1 /* SCSessionListViewController.m in Sources */,
 				D493657722EA9EF700DAC01C /* HeroTransition+Complete.swift in Sources */,
 				D47BC33C22E6D518009FC7E1 /* SCAssetExportSession.m in Sources */,
@@ -1084,7 +1094,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FiverrProblem.app/FiverrProblem";
 			};
@@ -1106,7 +1116,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblemTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FiverrProblem.app/FiverrProblem";
 			};
@@ -1127,7 +1137,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FiverrProblem;
 			};
@@ -1148,7 +1158,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mirecki.FiverrProblemUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = FiverrProblem;
 			};

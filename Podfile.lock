@@ -1,16 +1,20 @@
 PODS:
   - Hero (1.4.0)
+  - PryntTrimmerView (4.0.0)
 
 DEPENDENCIES:
   - Hero
+  - PryntTrimmerView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Hero
+    - PryntTrimmerView
 
 SPEC CHECKSUMS:
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  PryntTrimmerView: 67e67573ffd4c073f1308effa66aefd0cfa667a0
 
-PODFILE CHECKSUM: 4eeb1543673b483fc7c2f840518ed522aa9c27f5
+PODFILE CHECKSUM: f0c44a5713f4e418985894a00d1ae907a5faed22
 
 COCOAPODS: 1.7.2

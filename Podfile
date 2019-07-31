@@ -4,6 +4,7 @@ target 'FiverrProblem' do
 use_frameworks!
 
 pod 'Hero'
+pod "PryntTrimmerView"
 
 end
 
