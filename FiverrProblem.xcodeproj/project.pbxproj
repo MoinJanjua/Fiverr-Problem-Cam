@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18AF790922EF3C1B008AA6B4 /* EditVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */; };
 		18AF790B22F021BE008AA6B4 /* VideoUltilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF790A22F021BE008AA6B4 /* VideoUltilities.swift */; };
+		18E8D4FB22F1F473000AD616 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8D4F922F1F473000AD616 /* VideoHelper.swift */; };
+		18E8D4FC22F1F473000AD616 /* MergeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E8D4FA22F1F473000AD616 /* MergeVideoViewController.swift */; };
 		80B1B9EF22E8A66B00D0CB09 /* SCRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B9EE22E8A66B00D0CB09 /* SCRecorderViewController.m */; };
 		934750856490BCC68D3CBF7F /* Pods_FiverrProblem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C2801802A97510A6753969 /* Pods_FiverrProblem.framework */; };
 		D45AE53622E6D08A0017B31B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45AE53522E6D08A0017B31B /* AppDelegate.swift */; };
@@ -130,6 +132,8 @@
 		18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideosViewController.swift; sourceTree = "<group>"; };
 		18AF790A22F021BE008AA6B4 /* VideoUltilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoUltilities.swift; sourceTree = "<group>"; };
 		18AF790C22F0457D008AA6B4 /* EditVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditVideoViewController.h; sourceTree = "<group>"; };
+		18E8D4F922F1F473000AD616 /* VideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		18E8D4FA22F1F473000AD616 /* MergeVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeVideoViewController.swift; sourceTree = "<group>"; };
 		3C45FD414853F4BEB5D10511 /* Pods-FiverrProblem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiverrProblem.release.xcconfig"; path = "Target Support Files/Pods-FiverrProblem/Pods-FiverrProblem.release.xcconfig"; sourceTree = "<group>"; };
 		3FD201F28B57CD8A6ADB3009 /* Pods-FiverrProblem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FiverrProblem.debug.xcconfig"; path = "Target Support Files/Pods-FiverrProblem/Pods-FiverrProblem.debug.xcconfig"; sourceTree = "<group>"; };
 		80B1B9EE22E8A66B00D0CB09 /* SCRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecorderViewController.m; sourceTree = "<group>"; };
@@ -362,6 +366,8 @@
 				D45AE53722E6D08A0017B31B /* ViewController.swift */,
 				D45AE53922E6D08A0017B31B /* Main.storyboard */,
 				18AF790822EF3C1B008AA6B4 /* EditVideosViewController.swift */,
+				18E8D4FA22F1F473000AD616 /* MergeVideoViewController.swift */,
+				18E8D4F922F1F473000AD616 /* VideoHelper.swift */,
 				18AF790C22F0457D008AA6B4 /* EditVideoViewController.h */,
 				D45AE53F22E6D08C0017B31B /* Assets.xcassets */,
 				D45AE54122E6D08C0017B31B /* LaunchScreen.storyboard */,
@@ -784,6 +790,7 @@
 				D47BC32A22E6D518009FC7E1 /* SCImageView.m in Sources */,
 				D47BC34522E6D518009FC7E1 /* SCFilter+VideoComposition.m in Sources */,
 				D47BC33722E6D518009FC7E1 /* SCMediaTypeConfiguration.m in Sources */,
+				18E8D4FC22F1F473000AD616 /* MergeVideoViewController.swift in Sources */,
 				D493657422EA9EF700DAC01C /* HeroTransitionState.swift in Sources */,
 				D493656F22EA9EF700DAC01C /* ConditionalPreprocessor.swift in Sources */,
 				D493659322EA9EF700DAC01C /* SwiftSupport.swift in Sources */,
@@ -823,6 +830,7 @@
 				D493658522EA9EF700DAC01C /* Regex.swift in Sources */,
 				D45AE53822E6D08A0017B31B /* ViewController.swift in Sources */,
 				D47BC36722E6D654009FC7E1 /* SCAudioRecordViewController.m in Sources */,
+				18E8D4FB22F1F473000AD616 /* VideoHelper.swift in Sources */,
 				D47BC33B22E6D518009FC7E1 /* SCAudioTools.m in Sources */,
 				D47BC32B22E6D518009FC7E1 /* SCSampleBufferHolder.m in Sources */,
 				D493658622EA9EF700DAC01C /* Parser.swift in Sources */,

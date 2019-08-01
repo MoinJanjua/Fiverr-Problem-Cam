@@ -10,15 +10,25 @@ import Foundation
 import AVFoundation
 import AssetsLibrary
 import UIKit
+import AVKit
+import MobileCoreServices
 
 
-class EditVideosViewController: UIViewController {
+class EditVideosViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var VideoView: UIImageView!
+    @IBOutlet weak var CollectioView: UICollectionView!
+    var thumbnails = [UIImage]()
+
+    
+    var videoClips:[NSURL] = [NSURL]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePickerController.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -30,33 +40,151 @@ class EditVideosViewController: UIViewController {
 
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        videoURL = info["UIImagePickerControllerReferenceURL"] as? NSURL
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let urlval = info[UIImagePickerControllerMediaURL] as? NSURL
         print(videoURL as Any)
         imagePickerController.dismiss(animated: true, completion: nil)
+        do {
+            let asset = AVURLAsset(url: urlval! as URL , options: nil)
+            let imgGenerator = AVAssetImageGenerator(asset: asset)
+            imgGenerator.appliesPreferredTrackTransform = true
+            let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil)
+            let thumbnail = UIImage(cgImage: cgImage)
+            VideoView.image = thumbnail
+        } catch let error {
+            print("*** Error generating thumbnail: \(error.localizedDescription)")
+        }
         let minDuration : CMTime = CMTimeMake(0, 1)
         let maxDuration : CMTime = CMTimeMake(5, 1)
-        VideoUltilities.init().trimVideov2(sourceURL: videoURL!, startTime: minDuration, endTime: maxDuration, withAudio: true) { (url, error) in
-            self.videoURL = url
-        }
-        print("ok")
+        VideoUltilities.init().cropVideo(sourceURL: urlval! as URL, startTime: 0.5, endTime: 1.10, completion: { (url) in
+            self.videoURL = url as NSURL
+            
+            let player = AVPlayer(url: url as URL)
+            let vcPlayer = AVPlayerViewController()
+            vcPlayer.player = player
+            self.present(vcPlayer, animated: true, completion: nil)
+        })
+        //trimVideov2(sourceURL: videoURL!, startTime: minDuration, endTime: maxDuration, withAudio: true)
+        //        { (url, error) in
+        //            self.videoURL = url
+        //
+        //            let player = AVPlayer(url: url! as URL)
+        //            let vcPlayer = AVPlayerViewController()
+        //            vcPlayer.player = player
+        //            self.present(vcPlayer, animated: true, completion: nil)
+        //        }
     }
     
 
     
     
     @IBAction func TrimVideosBtn(_ sender: Any) {
-        print("ok")
+
 
         imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePickerController.mediaTypes = ["public.image", "public.movie"]
+        
+        imagePickerController.mediaTypes = ["public.video", "public.movie"]
         
         present(imagePickerController, animated: true, completion: nil)
     }
     
     
+//    func trimVideov3(sourceURL: NSURL, startTime: CMTime, endTime: CMTime, withAudio: Bool, completion:@escaping (NSURL?, NSError?) -> Void) -> Void {
+//        
+//        let fileManager = FileManager.default
+//        
+//        let sourcePathURL = NSURL(fileURLWithPath: (sourceURL.absoluteString ?? ""))
+//        
+//        // let asset = AVURLAsset(url: sourcePathURL as URL)
+//        let asset: AVAsset = AVAsset(url: sourcePathURL as URL) as AVAsset
+//        
+//        let composition = AVMutableComposition()
+//        
+//        let videoCompTrack = composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)
+//        let audioCompTrack = composition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+//        
+//        let assetVideoTrack = asset.tracks(withMediaType: AVMediaType.video)[0]
+//        let assetAudioTrack = asset.tracks(withMediaType: AVMediaType.audio)[0]
+//        
+//        var accumulatedTime = kCMTimeZero
+//        
+//        let durationOfCurrentSlice = CMTimeSubtract(endTime, startTime)
+//        let timeRangeForCurrentSlice = CMTimeRangeMake(startTime, durationOfCurrentSlice)
+//        
+//        do {
+//            try videoCompTrack?.insertTimeRange(timeRangeForCurrentSlice, of: assetVideoTrack, at: accumulatedTime)
+//            try audioCompTrack?.insertTimeRange(timeRangeForCurrentSlice, of: assetAudioTrack, at: accumulatedTime)
+//        }
+//        catch let error {
+//            print("Error insert time range \(error)")
+//        }
+//        
+//        accumulatedTime = CMTimeAdd(accumulatedTime, durationOfCurrentSlice)
+//        
+//        print("Trimv2 \(CMTimeGetSeconds(accumulatedTime))")
+//        
+//        let destinationPath = String(format: "%@%@", NSTemporaryDirectory(),"trim.mp4")
+//        let destinationPathURL = NSURL(fileURLWithPath: destinationPath)
+//        
+//        if fileManager.fileExists(atPath: destinationPath) {
+//            // remove if exists
+//            do {
+//                try fileManager.removeItem(at: destinationPathURL as URL)
+//            }
+//            catch let error {
+//                print("Could not remove file at path \(destinationPath) with error \(error)")
+//            }
+//        }
+//        
+//        let exportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality)
+//        exportSession?.outputURL = destinationPathURL as URL
+//        exportSession?.outputFileType = AVFileType.mp4
+//        exportSession?.shouldOptimizeForNetworkUse = true
+//        
+//        exportSession!.exportAsynchronously(completionHandler: { () -> Void in
+////            dispatch_async(dispatch_get_main_queue(), {
+////                self.handleExportCompletion(exportSession)
+////            }
+//            DispatchQueue.main.async {
+//                self.handleExportCompletion(session: exportSession!)
+//            }
+//            
+//        })
+//        
+////        exportSession?.exportAsynchronously(completionHandler: {
+////            switch exportSession!.status {
+////            case .completed :
+////                completion(NSURL(string: destinationPath),nil)
+////            default :
+////                print("Error export")
+////            }
+////        })
+//        
+//    }
+//    
+//    
+//    func handleExportCompletion(session: AVAssetExportSession) {
+//        let library = ALAssetsLibrary()
+//        let thumbnail =  self.getThumbnail(outputFileURL: session.outputURL! as NSURL)
+//        videoClips.append(session.outputURL! as NSURL)
+//        
+//        thumbnails.append(thumbnail)
+//        self.CollectioView.reloadData()
+//        let indexPath = NSIndexPath(item: thumbnails.count - 1, section: 0)
+//        self.CollectioView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.right, animated: true)
+//    }
+//    
+//    func getThumbnail(outputFileURL:NSURL) -> UIImage {
+//        
+//        let clip = AVURLAsset(url: outputFileURL as URL)
+//        let imgGenerator = AVAssetImageGenerator(asset: clip)
+//        let cgImage = try! imgGenerator.copyCGImage(
+//            at: CMTimeMake(0, 1), actualTime: nil)
+//        let uiImage = UIImage(cgImage: cgImage)
+//        return uiImage
+//        
+//    }
+// 
     
     
 //    let session = AVCaptureSession()

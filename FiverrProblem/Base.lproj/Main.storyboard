@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gk9-1f-zdL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gk9-1f-zdL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,6 +88,44 @@
                                 <rect key="frame" x="266" y="617" width="89" height="30"/>
                                 <state key="normal" title="Import Audio"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wZM-PZ-Y06">
+                                <rect key="frame" x="0.0" y="45" width="375" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McJ-Ga-0lb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="383"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E7w-9j-3l1">
+                                <rect key="frame" x="0.0" y="452" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a4w-Rl-IRo">
+                                    <size key="itemSize" width="155" height="145"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lZ3-HM-PHQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AwN-aF-kgr">
+                                                    <rect key="frame" x="0.0" y="8" width="145" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -98,10 +136,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kRP-cJ-wCo"/>
                     </view>
+                    <connections>
+                        <outlet property="CollectioView" destination="E7w-9j-3l1" id="XXw-sk-qH0"/>
+                        <outlet property="VideoView" destination="McJ-Ga-0lb" id="xzT-zE-l1x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y7W-HJ-jLt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="348"/>
+            <point key="canvasLocation" x="-631.20000000000005" y="347.67616191904051"/>
         </scene>
         <!--Video Player View Controller-->
         <scene sceneID="9gt-kd-OLd">
@@ -514,6 +556,81 @@
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="NXZ-7P-DZN"/>
             </objects>
             <point key="canvasLocation" x="-2124" y="338"/>
+        </scene>
+        <!--Merge Video View Controller-->
+        <scene sceneID="TSC-hG-il3">
+            <objects>
+                <viewController id="p6d-Hp-u7W" customClass="MergeVideoViewController" customModule="FiverrProblem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eqv-hU-C0y"/>
+                        <viewControllerLayoutGuide type="bottom" id="n4B-cL-pZI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LYN-h7-rbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2B-RY-xEJ">
+                                <rect key="frame" x="144" y="130" width="87" height="30"/>
+                                <state key="normal" title="Load Asset 1">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetOne:" destination="p6d-Hp-u7W" eventType="touchUpInside" id="zQO-oU-50h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z57-1a-Rk2">
+                                <rect key="frame" x="143" y="168" width="89" height="30"/>
+                                <state key="normal" title="Load Asset 2">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAssetTwo:" destination="p6d-Hp-u7W" eventType="touchUpInside" id="xvw-Lb-5Yc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y7-Wo-G2Q">
+                                <rect key="frame" x="149" y="206" width="77" height="30"/>
+                                <state key="normal" title="Load Audio">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadAudio:" destination="p6d-Hp-u7W" eventType="touchUpInside" id="p82-SA-Apq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQr-21-Yld">
+                                <rect key="frame" x="132" y="244" width="111" height="30"/>
+                                <state key="normal" title="Merge and Save">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="merge:" destination="p6d-Hp-u7W" eventType="touchUpInside" id="0HR-Lh-cF6"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="u3o-EU-Zmt">
+                                <rect key="frame" x="177.5" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="z57-1a-Rk2" firstAttribute="top" secondItem="W2B-RY-xEJ" secondAttribute="bottom" constant="8" symbolic="YES" id="2OD-YI-fmy"/>
+                            <constraint firstItem="u3o-EU-Zmt" firstAttribute="centerX" secondItem="LYN-h7-rbJ" secondAttribute="centerX" id="9zN-ZI-Skd"/>
+                            <constraint firstItem="W2B-RY-xEJ" firstAttribute="centerX" secondItem="LYN-h7-rbJ" secondAttribute="centerX" id="Dip-Vx-z5q"/>
+                            <constraint firstItem="bQr-21-Yld" firstAttribute="top" secondItem="6y7-Wo-G2Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Vxi-aI-gJ2"/>
+                            <constraint firstItem="bQr-21-Yld" firstAttribute="centerX" secondItem="LYN-h7-rbJ" secondAttribute="centerX" id="XyT-2E-34Q"/>
+                            <constraint firstItem="6y7-Wo-G2Q" firstAttribute="centerX" secondItem="LYN-h7-rbJ" secondAttribute="centerX" id="a0W-4j-Jc3"/>
+                            <constraint firstItem="W2B-RY-xEJ" firstAttribute="top" secondItem="eqv-hU-C0y" secondAttribute="bottom" constant="110" id="axC-lN-nw7"/>
+                            <constraint firstItem="6y7-Wo-G2Q" firstAttribute="top" secondItem="z57-1a-Rk2" secondAttribute="bottom" constant="8" symbolic="YES" id="job-zj-DQ3"/>
+                            <constraint firstItem="u3o-EU-Zmt" firstAttribute="top" secondItem="bQr-21-Yld" secondAttribute="bottom" id="mUH-Vp-GIb"/>
+                            <constraint firstItem="z57-1a-Rk2" firstAttribute="centerX" secondItem="LYN-h7-rbJ" secondAttribute="centerX" id="oA3-fI-D4N"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f2i-UL-Lf4"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityMonitor" destination="u3o-EU-Zmt" id="HFS-by-5cD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BrZ-Jb-3xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="399"/>
         </scene>
     </scenes>
     <resources>

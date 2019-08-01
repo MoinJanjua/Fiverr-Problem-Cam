@@ -8,10 +8,16 @@ import Foundation
 import AVFoundation
 import AssetsLibrary
 import UIKit
+import MobileCoreServices
 
 class VideoUltilities: NSObject {
+    
+    
+    
+    
   
   static let sharedInstance = VideoUltilities()
+    var videoClips:[NSURL] = [NSURL]()
   
   // MARK: Public methods
   
@@ -20,86 +26,187 @@ class VideoUltilities: NSObject {
     
     
     
-    
-    func cropVideo(url: NSURL, completion: @escaping (NSURL?, NSError?) -> Void) -> Void {
-    
-    let outputURL = url
-    
-    let fileManager = FileManager.default
-    
-    let asset : AVURLAsset = AVURLAsset(url: outputURL as URL, options: nil)
-    
-    if let clipVideoTrack: AVAssetTrack = asset.tracks(withMediaType: AVMediaType.video)[0] {
-      
-      if clipVideoTrack.naturalSize.height == clipVideoTrack.naturalSize.width {
-        let stringURL = outputURL.absoluteString?.replacingOccurrences(of: "file://", with: "")
-        //let stringURL = outputURL.absoluteString.stringByReplacingOccurrencesOfString("file://", withString: "")
-        completion(NSURL(string: stringURL!), nil)
-        return
-      }
-      
-      let videoComposition: AVMutableVideoComposition = AVMutableVideoComposition()
-      
-      videoComposition.frameDuration = CMTimeMake(1, 30)
-      
-      let squareSize =  clipVideoTrack.naturalSize.height > clipVideoTrack.naturalSize.width ? clipVideoTrack.naturalSize.width : clipVideoTrack.naturalSize.height
-      
-      videoComposition.renderSize = CGSize.init(width: squareSize, height: squareSize)
-      
-      let instruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
-      instruction.timeRange = CMTimeRangeMake(kCMTimeZero,  CMTimeMakeWithSeconds(60, 30))
-      
-      let transformer: AVMutableVideoCompositionLayerInstruction =
-        AVMutableVideoCompositionLayerInstruction(assetTrack: clipVideoTrack)
-      
-        let t1: CGAffineTransform = CGAffineTransform(translationX: clipVideoTrack.naturalSize.height, y: -(clipVideoTrack.naturalSize.width - clipVideoTrack.naturalSize.height) / 2 )
-      
-        let t2: CGAffineTransform = t1.rotated(by: CGFloat(Double.pi))  //CGAffineTransformRotate(t1, CGFloat(M_PI_2))
-      
-      let finalTransform: CGAffineTransform = t2
-      
-        transformer.setTransform(finalTransform, at: kCMTimeZero)
-      instruction.layerInstructions = [transformer]
-      
-      videoComposition.instructions = [instruction]
-      
-      let exportPath : NSString = NSString(format: "%@%@", NSTemporaryDirectory(), "output2.mov")
-      
-        let exportUrl: NSURL = NSURL.fileURL(withPath: exportPath as String) as NSURL
-      
-        if(fileManager.fileExists(atPath: exportPath as String)) {
-        
-            try! fileManager.removeItem(at: exportUrl as URL)
-      }
-      
-      let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)
-      exporter!.videoComposition = videoComposition
-        exporter!.outputFileType = AVFileType.mov
-        exporter!.outputURL = exportUrl as URL
-        exporter!.exportAsynchronously(completionHandler: { () -> Void in
-        
-        print(CMTimeGetSeconds((exporter?.asset.duration)!))
-        
-        switch exporter!.status {
-        case .completed :
-          let URL = NSURL(string: exportPath as String)
-          completion(URL, nil)
-          
-        default:
-          print(exporter?.error)
-          completion(nil, exporter?.error as! NSError)
-        }
-      })
-    }
-  }
+//
+//    func cropVideo(url: NSURL, completion: @escaping (NSURL?, NSError?) -> Void) -> Void {
+//
+//    let outputURL = url
+//
+//    let fileManager = FileManager.default
+//
+//    let asset : AVURLAsset = AVURLAsset(url: outputURL as URL, options: nil)
+//
+//    if let clipVideoTrack: AVAssetTrack = asset.tracks(withMediaType: AVMediaType.video)[0] {
+//
+//      if clipVideoTrack.naturalSize.height == clipVideoTrack.naturalSize.width {
+//        let stringURL = outputURL.absoluteString?.replacingOccurrences(of: "file://", with: "")
+//        //let stringURL = outputURL.absoluteString.stringByReplacingOccurrencesOfString("file://", withString: "")
+//        completion(NSURL(string: stringURL!), nil)
+//        return
+//      }
+//
+//      let videoComposition: AVMutableVideoComposition = AVMutableVideoComposition()
+//
+//      videoComposition.frameDuration = CMTimeMake(1, 30)
+//
+//      let squareSize =  clipVideoTrack.naturalSize.height > clipVideoTrack.naturalSize.width ? clipVideoTrack.naturalSize.width : clipVideoTrack.naturalSize.height
+//
+//      videoComposition.renderSize = CGSize.init(width: squareSize, height: squareSize)
+//
+//      let instruction: AVMutableVideoCompositionInstruction = AVMutableVideoCompositionInstruction()
+//      instruction.timeRange = CMTimeRangeMake(kCMTimeZero,  CMTimeMakeWithSeconds(60, 30))
+//
+//      let transformer: AVMutableVideoCompositionLayerInstruction =
+//        AVMutableVideoCompositionLayerInstruction(assetTrack: clipVideoTrack)
+//
+//        let t1: CGAffineTransform = CGAffineTransform(translationX: clipVideoTrack.naturalSize.height, y: -(clipVideoTrack.naturalSize.width - clipVideoTrack.naturalSize.height) / 2 )
+//
+//        let t2: CGAffineTransform = t1.rotated(by: CGFloat(Double.pi))  //CGAffineTransformRotate(t1, CGFloat(M_PI_2))
+//
+//      let finalTransform: CGAffineTransform = t2
+//
+//        transformer.setTransform(finalTransform, at: kCMTimeZero)
+//      instruction.layerInstructions = [transformer]
+//
+//      videoComposition.instructions = [instruction]
+//
+//      let exportPath : NSString = NSString(format: "%@%@", NSTemporaryDirectory(), "output2.mov")
+//
+//        let exportUrl: NSURL = NSURL.fileURL(withPath: exportPath as String) as NSURL
+//
+//        if(fileManager.fileExists(atPath: exportPath as String)) {
+//
+//            try! fileManager.removeItem(at: exportUrl as URL)
+//      }
+//
+//      let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)
+//      exporter!.videoComposition = videoComposition
+//        exporter!.outputFileType = AVFileType.mov
+//        exporter!.outputURL = exportUrl as URL
+//        exporter!.exportAsynchronously(completionHandler: { () -> Void in
+//
+//        print(CMTimeGetSeconds((exporter?.asset.duration)!))
+//
+//        switch exporter!.status {
+//        case .completed :
+//          let URL = NSURL(string: exportPath as String)
+//          completion(URL, nil)
+//
+//        default:
+//            print(exporter?.error ?? "")
+//            completion(nil, exporter?.error as NSError?)
+//        }
+//      })
+//    }
+//  }
 
+     func cropVideo(sourceURL: URL, startTime: Double, endTime: Double, completion: ((_ outputUrl: URL) -> Void)? = nil)
+    {
+        let fileManager = FileManager.default
+        let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        let asset = AVAsset(url: sourceURL)
+        let length = Float(asset.duration.value) / Float(asset.duration.timescale)
+        print("video length: \(length) seconds")
+        
+        var outputURL = documentDirectory.appendingPathComponent("output")
+        do {
+            try fileManager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+            outputURL = outputURL.appendingPathComponent("\(sourceURL.lastPathComponent).mp4")
+        }catch let error {
+            print(error)
+        }
+        
+        //Remove existing file
+        try? fileManager.removeItem(at: outputURL)
+        
+        guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else { return }
+        exportSession.outputURL = outputURL
+        exportSession.outputFileType = .mp4
+        
+        let timeRange = CMTimeRange(start: CMTime(seconds: startTime, preferredTimescale: 1000),
+                                    end: CMTime(seconds: endTime, preferredTimescale: 1000))
+        
+        exportSession.timeRange = timeRange
+        exportSession.exportAsynchronously {
+            switch exportSession.status {
+            case .completed:
+                print("exported at \(outputURL)")
+                completion?(outputURL)
+            case .failed:
+                print("failed \(exportSession.error.debugDescription)")
+            case .cancelled:
+                print("cancelled \(exportSession.error.debugDescription)")
+            default: break
+            }
+        }
+    }
+    
+    
+    func cropVideo(sourceURL1: NSURL, statTime:Float, endTime:Float)
+    {
+        let manager = FileManager.default
+        
+        guard let documentDirectory = try? manager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true) else {return}
+        guard let mediaType = "mp4" as? String else {return}
+        guard let url = sourceURL1 as? NSURL else {return}
+        
+        if mediaType == kUTTypeMovie as String || mediaType == "mp4" as String {
+            let asset = AVAsset(url: url as URL)
+            let length = Float(asset.duration.value) / Float(asset.duration.timescale)
+            print("video length: \(length) seconds")
+            
+            let start = statTime
+            let end = endTime
+            
+            var outputURL = documentDirectory.appendingPathComponent("output")
+            do {
+                try manager.createDirectory(at: outputURL, withIntermediateDirectories: true, attributes: nil)
+                let name = hostent.init().h_name
+                outputURL = outputURL.appendingPathComponent("\(name).mp4")
+            }catch let error {
+                print(error)
+            }
+            
+            //Remove existing file
+            _ = try? manager.removeItem(at: outputURL)
+            
+            
+            guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {return}
+            exportSession.outputURL = outputURL
+            exportSession.outputFileType = AVFileType.mp4
+            
+            let startTime = CMTime(seconds: Double(start ), preferredTimescale: 1000)
+            let endTime = CMTime(seconds: Double(end ), preferredTimescale: 1000)
+            let timeRange = CMTimeRange(start: startTime, end: endTime)
+            
+            exportSession.timeRange = timeRange
+            exportSession.exportAsynchronously{
+                switch exportSession.status {
+                case .completed:
+                    print("exported at \(outputURL)")
+                    //self.saveVideoTimeline(outputURL)
+                case .failed:
+                    print("failed \(exportSession.error ?? "" as! Error)")
+                    
+                case .cancelled:
+                    print("cancelled \(exportSession.error ?? "default value" as! Error)")
+                    
+                default: break
+                }
+            }
+        }
+    }
+    
+    
+    
     func trimVideov2(sourceURL: NSURL, startTime: CMTime, endTime: CMTime, withAudio: Bool, completion:@escaping (NSURL?, NSError?) -> Void) -> Void {
     
     let fileManager = FileManager.default
     
     let sourcePathURL = NSURL(fileURLWithPath: (sourceURL.absoluteString ?? ""))
     
-    let asset = AVURLAsset(url: sourcePathURL as URL)
+   // let asset = AVURLAsset(url: sourcePathURL as URL)
+        let asset: AVAsset = AVAsset(url: sourcePathURL as URL) as AVAsset
     
     let composition = AVMutableComposition()
     
@@ -152,9 +259,11 @@ class VideoUltilities: NSObject {
         print("Error export")
       }
     })
-    
+        
   }
-  
+    
+ 
+    
     func removeAudioFromVideo(videoURL: NSURL, completion: @escaping (NSURL?, NSError?) -> Void) -> Void {
 
     let fileManager = FileManager.default
