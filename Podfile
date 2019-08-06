@@ -5,6 +5,7 @@ use_frameworks!
 
 pod 'Hero'
 pod "PryntTrimmerView"
+pod "ABVideoRangeSlider"
 
 end
 

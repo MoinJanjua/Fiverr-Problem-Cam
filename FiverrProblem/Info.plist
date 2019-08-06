@@ -26,6 +26,8 @@
 	<string>yes</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>yes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>yes</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

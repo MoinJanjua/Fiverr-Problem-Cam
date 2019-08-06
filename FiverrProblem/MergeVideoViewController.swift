@@ -238,4 +238,7 @@ extension MergeVideoViewController: MPMediaPickerControllerDelegate {
   func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
     dismiss(animated: true, completion: nil)
   }
+    
+    
+    
 }
